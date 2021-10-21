@@ -1,0 +1,35 @@
+# Class template for a dog object
+class Dog:
+    # Initialisation method, gets run whenever we create a new Dog
+    # The self just allows this function to reference variables relevant to this particular Dog 
+    def __init__ (self, name, hungerLevel):
+        self.name = name 
+        self.hungerLevel = hungerLevel
+    # Query the status of the Dog
+    def status(self):
+        print("Dog is called ", self.name)
+        print("Dog hunger level is ", self.hungerLevel) 
+        pass
+    # Set the hunger level of the dog
+    def setHungerLevel(self, hungerLevel): 
+        self.hungerLevel = hungerLevel 
+        pass
+    # Dogs can bark
+    def bark(self):
+         print("Woof!") 
+         pass
+
+# Create two dog objects
+# Note that we don’t need to include the self from the parameter list 
+lassie = Dog("Lassie", "Mild")
+yoda = Dog("Yoda", "Ravenous")
+# Check on Yoda & Lassie
+yoda.status() 
+lassie.status()
+
+# Get Lassie to bark
+lassie.bark()
+
+# Feed Yoda
+yoda.setHungerLevel("Full")
+yoda.status()
