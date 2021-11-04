@@ -88,11 +88,14 @@ while error > 0.10 * pow(0.1, 2):
     error = 0.00
     for input, target in zip( inputs, targets ):
         neunet.train( input, target )
+
+    for input, target in zip( inputs, targets ):
         currentResult = neunet.query( input )
-        error += 0.5 * pow(currentResult - target, 2)
+        error += 0.5*pow(currentResult - target, 2)
+
     numEpochs += 1
     error = error / len(inputs)
-    # print(numEpochs, error, neunet.wih, neunet.who)
+    # print(numEpochs, error)
     if numEpochs > 100000 :
         break
 
@@ -123,6 +126,8 @@ while error > 0.5 * pow(0.1, 2):
     error = 0.00
     for input, target in zip( inputs2, targets2 ):
         neunet2.train( input, target )
+
+    for input, target in zip( inputs2, targets2 ):
         currentResult = neunet2.query( input )
         error += 0.5 * pow(currentResult - target, 2)
     numEpochs += 1
